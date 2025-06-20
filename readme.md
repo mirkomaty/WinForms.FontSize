@@ -40,7 +40,7 @@ With another setting you can ensure that this mode does not apply to the design 
 
 Both settings together produce a reasonable result.
 
-## Anwendung dieser Bibliothek
+## Using this library
 
 Now our font calculator comes into play. The default font for Windows Forms is usually Segue UI at 9pt size.
 
