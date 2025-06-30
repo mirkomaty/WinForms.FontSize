@@ -1,9 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
+		<TargetFrameworks>net4.8;net6.0-windows;net8.0-windows</TargetFrameworks>
 		<UseWindowsForms>true</UseWindowsForms>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<Title>A library that can be used to scale WindowsForms applications. </Title>
+		<Description>A library that can be used to scale WindowsForms applications. </Description>
+		<PackageProjectUrl>https://github.com/mirkomaty/WinForms.FontSize</PackageProjectUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageTags>Windows Forms;Scaling;Multi Monitor</PackageTags>
+		<PackageReleaseNotes>Initial Version</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net4.8'">
+		<Nullable>disable</Nullable>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0-windows'">
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 </Project>
